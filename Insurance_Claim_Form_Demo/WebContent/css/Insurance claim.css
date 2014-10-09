@@ -1,0 +1,88 @@
+@charset "utf-8";
+/* CSS Document */
+.policySearch
+{
+	width:760px;
+	margin:10px auto 20px auto;
+	background-color:#33ccff;
+}
+.ui-corner-all
+{
+	-webkit-border-radius:8px;
+}
+.policySearch h4 {
+margin: 0;
+background: transparent url(headerBarBG.png) no-repeat;
+color: #ffffff;
+height: 25px;
+padding-left: 10px;
+padding-top: 3px;
+font-size: 13px;
+}
+.sp
+{
+	white-space:pre;
+}
+.resized-textbox
+{
+	height:15px;
+	width:140px;
+}
+.resized-selectbox
+{
+	height:21px;
+	width:143px;
+}
+.resized-ctextbox
+{
+	height:15px;
+	width:200px;
+}
+span.tab
+{
+	padding:5px;
+}
+span.itab
+{
+	padding:13px;
+}
+.resized-cselectbox
+{
+	height:21px;
+	width:203px;
+}
+.fld
+{
+-webkit-border-radius: 5px;
+ border: 1px solid #3f82c3;
+}
+span.ptab
+{
+	padding:10px;
+}
+span.pttab
+{
+	padding:32px;
+}
+.resized-ptextbox
+{
+	height:15px;
+	width:150px;
+}
+span.dttab
+{
+	padding:25px;
+}
+span.ttab
+{
+	padding:20px;
+}
+span.sbtab
+{
+	padding:310px;
+}
+.etab
+{
+	width:760px;
+	margin:10px auto 20px auto;
+}

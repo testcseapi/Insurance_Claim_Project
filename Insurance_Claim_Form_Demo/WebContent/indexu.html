@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ONLINE REGISTRATION FORM FOR CLAIM INSURANCE</title>
+<link rel="stylesheet" media="all" type="text/css"  href="css/jquery-time-ui.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-time-ui.min.js"></script>
+ <link rel="stylesheet" media="all" type="text/css" href="css/jquery-ui-timepicker-addon.css" />
+ <script>
+ $(function()
+ {
+	 $("#datepicker").datepicker();
+ });
+ </script>
+ <script type="text/javascript">
+// var count=0;
+ var errorString="";
+function validateform()
+{
+    errorString="";
+    document.getElementById("error").innerHTML=errorString;
+  var csubmit=document.getElementById("ClaimSubmit").value;
+  
+  var fname=document.getElementById("Fname").value;
+  
+  var lname=document.getElementById("Lname").value;
+  var apno=document.getElementById("Aptnumber").value;
+  var city=document.getElementById("City").value;
+  
+  var state=document.getElementById("State").value;
+
+  var zipcode=document.getElementById("Zipcode").value;
+    
+  var y=document.getElementById("Y").checked;
+ 
+  var n=document.getElementById("N").checked;
+  var hp=document.getElementById("Hp").value;
+ 
+  var wp=document.getElementById("Wp").value;
+   
+  var cp=document.getElementById("Cp").value;
+  ;
+  var ap=document.getElementById("Ap").value;
+  
+  var h=document.getElementById("H").checked;
+  
+  var w=document.getElementById("W").checked;
+  var c=document.getElementById("C").checked;
+  var a=document.getElementById("A").checked;
+  var Datepicker=document.getElementById("datepicker").value;
+  
+  var ltime=document.getElementById("Ltime").value;
+  
+  var ldesc=document.getElementById("Ldesc").value;
+ 
+  var lstate=document.getElementById("LState").value;
+  var lcountry=document.getElementById("LCountry").value;
+  validation=true;
+  if(csubmit=="")
+   {
+	 errorString +="<div><b><span style='color:green'>*</span><span style='color:#ff0000'>please select submitting claim as  </span></b></div>"; 
+	 validation=false; 
+	 
+  }
+
+if(fname=="")
+  {
+	  errorString +="<div><b><span style='color:green'>*</span><span style='color:#ff0000'>please enter First name</span></b></div>";	
+	  validation=false; 
+  }
+  
+if(lname=="")
+  {
+	  errorString +="<div><b><span style='color:green'>*</span><span style='color:#ff0000'>please enter Last name</span></b></div>";	
+	  validation=false; 
+
+  }
+if(apno=="")
+  {
+	  errorString +="<div><b><span style='color:green'>*</span><span style='color:#ff0000'>please enter Apartment Number</span></b></div>";	
+  validation=false; 
+  }
+
+if(city=="")
+  {
+	  errorString +="<div><b><span style='color:green'>*</span><span style='color:#ff0000'>please enter  City</span></b></div>";	 
+  validation=false; 
+
+  }
+
+if(state==="")
+   {
+	 errorString +="<div><b><span style='color:green'>*</span><span style='color:#ff0000'>please select state</span></b></div>";
+	 validation=false;   
+  }
+if(zipcode=="")
+  {
+	  errorString +="<div><b><span style='color:green'>*</span><span style='color:#ff0000'>please enter Zipcode</span></b></div>";
+    validation=false; 	 
+
+  }
+if(y==false&&n==false)
+  {
+	  errorString +="<div><b><span style='color:green'>*</span><span style='color:#ff0000'>please do you prefer email</span></b></div>";
+validation=false; 
+
+  }
+
+if(hp=="")
+  {
+	  errorString +="<div><b><span style='color:green'>*</span><span style='color:#ff0000'>please enter Home Phone number</span></b></div>";
+validation=false; 
+	 
+  }
+
+if(wp=="")
+  {
+	  errorString +="<div><b><span style='color:green'>*</span><span style='color:#ff0000'>please enter Work Phone number</span></b></div>";
+  validation=false; 
+	 
+  }
+if(cp=="")
+  {
+	  errorString +="<div><b><span style='color:green'>*</span><span style='color:#ff0000'>please enter Cell Phone number</span></b></div>";
+validation=false; ;
+	 
+  }
+if(ap=="")
+  {
+	  errorString +="<div><b><span style='color:green'>*</span><span style='color:#ff0000'>please enter Alternate Phone number</span></b></div>";
+	validation=false; 
+  }
+if(h==false&&w==false&&c==false&&a==false)
+  {
+	  errorString +="<div><b><span style='color:green'>*</span><span style='color:#ff0000'>please select best phone</span></b></div>";
+  validation=false; 
+
+  }
+if(Datepicker=="")
+  {
+	  errorString +="<div><b><span style='color:green'>*</span><span style='color:#ff0000'>please select date</span></b></div>";	
+    validation=false; 
+
+  }
+if(ltime=="")
+  {
+	  errorString +="<div><b><span style='color:green'>*</span><span style='color:#ff0000'>please select loss time</span></b></div>";	
+   validation=false; 
+  }
+if(ldesc=="")
+  {
+	  errorString +="<div><b><span style='color:green'>*</span><span style='color:#ff0000'>please enter Loss description</span></b></div>";
+validation=false; 
+	 
+  }
+
+if(lstate=="")
+  {
+	  errorString +="<div><b><span style='color:green'>*</span><span style='color:#ff0000'>please select loss State</span></b></div>";
+validation=false; 	
+ 
+  }
+
+if(lcountry=="")
+  {
+	  errorString +="<div><b><span style='color:green'>*</span><span style='color:#ff0000'>please select loss    Country</span></b></div>";   
+   validation=false; 
+  }
+  
+if(validation)
+  {
+	  alert("Claim Successfully submitted");
+	  return true;
+  }
+  else
+  {
+	 document.getElementById("error").innerHTML=errorString;
+	 return false;
+  }
+}
+</script>
+</head>
+<body>
+<link rel='stylesheet' href='css/Insurance claim.css' type='text/css' />
+<img src="images/farmersheader.png">
+<table><tr><td><input type="text" autocomplete="off" title="Enter the policy number for search" value="Enter the policy number for search" maxlength="63" onblur="if(this.value=='') {this.value = 'Enter the policy number for search';this.style.color='#a4a4a4';}" onfocus="if(this.value=='Enter the policy number for search'){this.value='';this.style.color='#999999';};" style="float: left; padding-left: 15px; padding-right: 15px; height: 27px; width: 198px; color: rgb(164, 164, 164); font-size: 12px; font-family: 'Trebuchet MS', Arial, sans-serif; border-style: solid; border-color:red;margin-left: 850px;" id="Pcno" onclick="formhide()" onmouseout="formshow()" name="Pcno"></td><td><input type="submit"  value="Search" id="Search" name="Search" /></td></tr></table></form>
+<br /><font color="red"><center>
+<!----<b>"Please fill all the fields. Items marked with an asterisk(*) are required fields"</b>--></center></font></div>
+<div class="etab" name="error" id="error" ></div>
+<div class= "policySearch ui-corner-all">
+<h4>Personal Information</h4>
+<table>
+    <tr>
+      <td><span style="color:#ff0000">*</span><label>I am submitting claim as a</label></td>
+      <td><select class="resized-selectbox" id="ClaimSubmit" name="ClaimSubmit">
+      <option></option>
+      <option>Witness</option>
+      <option>Claimant</option>
+      <option>Agent-Former</option>
+      <option>Afent-Non-Former</option>
+      <option>Insured</option>
+      </select></td>
+      </tr>
+      <tr>
+        <td>	
+        <label>&nbsp;&nbsp;Policy Number</label></td>
+        <td><input type="text" class="resized-textbox" name="Pcno" id="Policy Number"/>
+        </td>
+         </table>
+</div>
+<div class= "policySearch ui-corner-all">
+<h4>Contact Information</h4>
+<table>
+   <tr>
+   <td>
+   </td>
+   </tr>
+   <tr>
+   <td>
+   <span style="color:#ff0000">*</span><label>First Name<span class="tab"></span></label></td>
+   <td><input type="text" class="resized-ctextbox" name="Fname" id="Fname"/>
+   </td>
+   <td>
+   <span style="color:#ff0000">*</span><label>Last Name<span class="tab"></span></label></td>
+   <td><input type="text" class="resized-ctextbox" name="Lname" id="Lname"/>
+   </td>
+   </tr>
+   <tr>
+   <td>
+   <span style="color:#ff0000">*</span><label>Street/Apt.Number<span class="tab"></span></label></td>
+   <td><input type="text" class="resized-ctextbox" name="Aptnumber" id="Aptnumber"/>
+   </td>
+   <td>
+   <span style="color:#ff0000">*</span><label>City<span class="tab"></span></label></td>
+   <td><input type="text" class="resized-ctextbox" name="City" id="City"/>
+   </td>
+   </tr>
+   <tr>
+   <td><span style="color:#ff0000">*</span><label>State</label></td>
+      <td><select class="resized-cselectbox" id="State" name="State">
+      <option></option>
+      <option>California</option>
+      <option>Indiana</option>
+      <option>New Mexico</option>
+      <option>New York</option>
+      <option>Washington</option>
+      </select></td>
+      <td>
+   <span style="color:#ff0000">*</span><label>Zipcode<span class="tab"></span></label></td>
+   <td><input type="text" class="resized-ctextbox" name="Zipcode" id="Zipcode"/>
+   </td>
+   </tr>
+   <tr>
+   <td>
+   <label>&nbsp;&nbsp;EMail Address<span class="tab"></span></</label></td>
+   <td><input type="text" class="resized-ctextbox" name="Email" id="Email"/>
+   </td>
+   <td>
+   &nbsp;&nbsp;<label>Confirm Email<br>&nbsp;&nbsp;Address</label><span class="tab"></span></td>
+   <td><input type="text" class="resized-ctextbox" name="CEmail" id="CEmail"/>
+   </td>
+   <tr>
+   <td>
+   <span style="color:#ff0000">*</span><label>Do you prefer email<br>&nbsp;&nbsp;Correspondence<span class="tab"></span></label></td>
+   <td><input type="radio" name="emailp" id="Y" value="Yes" />Yes&nbsp;<input type="radio" name="emailp" id="N" value="No"/>No
+   </td>
+  <td>&nbsp;&nbsp;<label>Preferred Language</label></td>
+      <td><select class="resized-cselectbox" name="PreferredLanguage" id="PreferredLanguage">
+      <option></option>
+      <option>English</option>
+      <option>Spanish</option>
+      <option>French</option>
+      <option>German</option>
+      <option>Japanese</option>
+      </select></td>
+      </tr>
+      <tr>
+      <td>
+      </td>
+      <td></td>
+      <td>&nbsp;&nbsp;<label>Interpreter Needed</label></td>
+      <td><input type="hidden" name="Ineed" value="No" /><input type="checkbox" name="Ineed" value="Yes" /></td>
+      </tr>
+      <tr>
+   <td colspan="2" style="vertical-align:top">
+      <fieldset class="fld"><legend><span style="color:#ff0000">*</span>Phone Contacts</legend>
+        <table style="width:100px;">
+         <tr>
+         <td></td><td></td><td><label>&nbsp;Best&nbsp;Phone</label></td></tr>
+         <tr>
+          <td><label><span class="pttab"></span>Home&nbsp;Phone</label></td><span class="pttab"></span>
+          <td><input type="text" class="resized-ptextbox" name="Hphone" id="Hp"/></td>
+          <td><span class="ptab"></span><input type="radio" name="phc" id="H" value="HomePhone"/></td>
+         </tr>
+         <tr>
+          <td><label>Work&nbsp;Phone</label></td>
+          <td><input type="text" class="resized-ptextbox" name="Wphone" id="Wp" /></td>
+          <td><span class="ptab"></span><input type="radio" name="phc"  id="W" value="WorkPhone"/></td>
+         </tr>
+         <tr>
+          <td><label>Cell&nbsp;Phone</label></td>
+          <td><input type="text" class="resized-ptextbox" name="Cphone" id="Cp"/></td>
+          <td><span class="ptab"></span><input type="radio" name="phc" id="C" value="CellPhone"/></td>
+         </tr>
+         <tr>
+          <td><label>Alternate&nbsp;Phone</label></td>
+          <td><input type="text" class="resized-ptextbox"/ name="Alphone" id="Ap"/></td>
+          <td><span class="ptab"></span><input type="radio" name="phc" id="A"  value="AlternatePhone"/></td>
+         </tr>
+        </table>
+      </fieldset>
+   </td>
+</tr>
+   </table>
+ </div>
+ <div class= "policySearch ui-corner-all">
+<h4>Loss Information</h4>
+<table>
+   <tr>
+   <td>
+   </td>
+   </tr>
+   <tr>
+   <td><span style="color:#ff0000">*</span><label>Loss&nbsp;Date<span class="dttab"></span></label></td>
+   <td><input type="text" id="datepicker" name="datepicker"/></td>
+   <td><span style="color:#ff0000">*</span><label>Loss&nbsp;Time<span class="ttab"></span></label></td>
+   <td><select class="resized-selectbox" name="Ltime" id="Ltime">
+      <option></option>
+      <option>00:00</option>
+      <option>00:30</option>
+      <option>01:00</option>
+      <option>01:30</option>
+      <option>02:00</option>
+      </select></td>
+  </tr>
+  <tr><td></td></tr>
+  <tr>
+     <td><span style="color:#ff0000">*</span><label>Loss&nbsp;Description<span class="dttab"></span></label></td>
+     <td><textarea rows="4" cols="30" name="Ldesc" id="Ldesc"></textarea></td>
+   </tr>
+   <tr>
+   <tr>
+   <td>
+   <label>&nbsp;&nbsp;Loss&nbsp;Location&nbsp;Address<span class="tab"></span></label></td>
+   <td><input type="text" class="resized-ctextbox" name="Laddress"/>
+   </td>
+   <td><label>&nbsp;&nbsp;City<span class="ttab"></span></label></td>
+   <td><input type="text" class="resized-ctextbox" name="Lcity"/>
+   </td>
+   </tr>
+   <tr>
+   <td><span style="color:#ff0000">*</span><label>State</label></td>
+      <td><select class="resized-cselectbox" name="LState" id="LState">
+      <option></option>
+      <option>California </option>
+      <option>Indiana</option>
+      <option>New Mexico</option>
+      <option>New York</option>
+      <option>Washington</option>
+      </select></td>
+      <td>
+  <label>&nbsp;&nbsp;Zipcode<span class="ttab"></span></label></td>
+   <td><input type="text" class="resized-ctextbox" name="Lzipcode"/>
+   </td>
+   </tr>
+   <tr>
+   <td><span style="color:#ff0000">*</span><label>Country</label></td>
+      <td><select class="resized-cselectbox" name="LCountry" id="LCountry">
+      <option></option>
+      <option>Canada</option>
+      <option>USA</option>
+      </select></td> 
+   </table>
+   </div>
+<center><input type="submit" title="submit" value="submit" id="submit"></center>
+
+   <font color="red"><div id="pcno"></div></font>
+</form>
+</body>
+</html>
