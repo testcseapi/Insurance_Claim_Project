@@ -3,17 +3,17 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="InsuranceIndex">
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="TestCase">
     <property environment="env"/>
-    <property name="ECLIPSE_HOME" value="../../../adt-bundle-windows-x86-20140702/adt-bundle-windows-x86-20140702/eclipse"/>
-    <property name="junit.output.dir" value="C:/hreport/"/>
+    
+    <property name="junit.output.dir" value="/var/lib/jenkins/jobs/Selenium-Junit Test/workspace/"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.7"/>
     <property name="source" value="1.7"/>
-    <path id="InsuranceIndex.classpath">
+    <path id="TestCase.classpath">
         <pathelement location="bin"/>
-        <pathelement location="../../../../Downloads/junit-4.10.jar"/>
-        <pathelement location="../../../../Downloads/selenium-server-standalone-2.42.2.jar"/>
+        <pathelement location="/home/ec2-user/junit-4.10.jar"/>
+        <pathelement location="/home/ec2-user/selenium-server-standalone-2.42.2.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
@@ -34,7 +34,7 @@
         <echo message="Build done"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
-            <classpath refid="InsuranceIndex.classpath"/>
+            <classpath refid="TestCase.classpath"/>
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
@@ -51,29 +51,13 @@
         <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
         <antcall target="build"/>
     </target>
-    <target name="Test (1)">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="Test1" todir="${junit.output.dir}"/>
-            <classpath refid="InsuranceIndex.classpath"/>
-        </junit>
-    </target>
-    <target name="Test (2)">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="Test" todir="${junit.output.dir}"/>
-            <classpath refid="InsuranceIndex.classpath"/>
-        </junit>
-    </target>
+ 
     <target name="Test">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
             <test name="Test" todir="${junit.output.dir}"/>
-            <test name="Test1" todir="${junit.output.dir}"/>
-            <classpath refid="InsuranceIndex.classpath"/>
+            <classpath refid="TestCase.classpath"/>
         </junit>
     </target>
    <!--  <target name="junitreport">

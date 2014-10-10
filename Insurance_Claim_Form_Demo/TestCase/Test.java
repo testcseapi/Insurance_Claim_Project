@@ -23,7 +23,7 @@ public class Test extends TestCase {
 	  {
 		  
 	   driver = new FirefoxDriver();
-	   baseUrl="https://s3.amazonaws.com/cadstechstore/Insurance_Claim_Project/Insurance_Claim_Form_Demo/WebContent/indexu.html";  
+	   baseUrl="https://s3.amazonaws.com/cadstechstore/Insurance_Claim_Form_Demo/WebContent/indexu.html";  
 	    //baseUrl = "file:///C:/Users/test/Desktop/New%20folder/index.html";
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	    driver.manage().window().maximize();
@@ -93,7 +93,8 @@ public class Test extends TestCase {
 	         Alert alert=driver.switchTo().alert();
 	         String almsg=alert.getText();
 	         alert.accept();
-	         System.out.println(almsg);
+	         //System.out.println(almsg);
+	          System.out.println("Test Success:  "+almsg);
 	          return true;
 	   
 	       } 
